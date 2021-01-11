@@ -71,7 +71,7 @@ root@admin: ~$ python manage.py migrate
 <Reporter: John Smith>
 >>> Reporter.objects.get(full_name__startswith='John')
 <Reporter: John Smith>
->>> Reporter.objects.get(full_name__contains='mith')
+>>> Reporter.objects.get(full_name__contains='ith')
 <Reporter: John Smith>
 >>> Reporter.objects.get(id=2)
 Traceback (most recent call last):
@@ -145,7 +145,7 @@ urlpatterns = [
 ]
 ```
 
-For example, if a user requested the URL `“/articles/2005/05/39323/”`, Django would call the function 
+For example, if a user requested the URL `“/articles/2005/05/39323/”`, Django would call the function
 
 ```py
 news.views.article_detail(request, year=2005, month=5, pk=39323).
@@ -213,8 +213,11 @@ Here’s what the “base.html” template, including the use of static files, m
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <img src="{% static 'images/sitelogo.png' %}" alt="Logo">
+    <img src="{% static 'images/site-logo.png' %}" alt="Logo">
     {% block content %}{% endblock %}
 </body>
 </html>
 ```
+
+- [Cache](https://docs.djangoproject.com/en/3.1/topics/cache/)
+- [RSS Feed](https://docs.djangoproject.com/en/3.1/topics/cache/)
